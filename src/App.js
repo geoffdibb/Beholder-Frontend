@@ -23,7 +23,7 @@ export default class App extends React.Component {
 
           <Route path="/Login" component={Login} />
 
-          <Route path="/Map" component={MapPage} />
+          <Route path="/MapPage" component={MapPage} />
 
           <Route path="/Profile" component={Profile} />
 
