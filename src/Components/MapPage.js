@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Map extends React.Component {
+export default class MapPage extends React.Component {
 
     render() {
         return (

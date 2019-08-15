@@ -5,7 +5,7 @@ import './App.css';
 import NavigationBar from './Components/NavigationBar.js';
 import Homepage from './Components/Homepage';
 import Login from './Components/Login';
-import Map from './Components/Map';
+import MapPage from './Components/MapPage';
 import Profile from './Components/Profile';
 import ResultPage from './Components/ResultPage';
 import SearchPage from './Components/SearchPage';
@@ -23,7 +23,7 @@ export default class App extends React.Component {
 
           <Route path="/Login" component={Login} />
 
-          <Route path="/Map" component={Map} />
+          <Route path="/Map" component={MapPage} />
 
           <Route path="/Profile" component={Profile} />
 
