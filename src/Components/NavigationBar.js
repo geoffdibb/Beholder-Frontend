@@ -27,7 +27,15 @@ export default class NavigationBar extends React.Component {
         return (
             <div>
                 <Navbar color="dark" dark expand="md">
-                    <NavbarBrand href="/" >Beholder</NavbarBrand>
+                    <NavbarBrand className="mx-auto" href="/" >
+                        <img
+                            src="../../logo192.png"
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                            alt="React Bootstrap logo"
+                        />
+                        Beholder</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>

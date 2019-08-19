@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, InputGroup, FormText, Form, FormGroup, Label, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
+import { Button, InputGroup,
+    //  FormText, Form,
+     FormGroup, Label, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
 
 export default class Login extends React.Component {
 
