@@ -1,34 +1,67 @@
 import React from 'react';
-import { Button, InputGroup, FormText, Form, FormGroup, Label, InputGroupText, InputGroupAddon, Input } from 'reactstrap';
+import {
+    Button, InputGroup,
+    //  FormText, Form,
+    FormGroup, Label, InputGroupText, InputGroupAddon, Input, Row, Col
+} from 'reactstrap';
+
 
 export default class Login extends React.Component {
 
     render() {
         return (
             <div>
-                <InputGroup>
-                    <InputGroupAddon addonType="prepend">
-                        <InputGroupText>Username</InputGroupText>
-                    </InputGroupAddon>
-                    <Input />
-                </InputGroup>
-
-                <InputGroup>
-                    <InputGroupAddon addonType="prepend">
-                        <InputGroupText>Password</InputGroupText>
-                    </InputGroupAddon>
-                    <Input />
-                </InputGroup>
+                <img className='Logo'
+                    src="../../LucyVariant.png"
+                    alt="React Bootstrap logo"
+                />
+                <Row>
+                    <Col md='4'></Col>
+                    <Col md='4'>
+                    <h1>Welcome</h1>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md='3'></Col>
+                    <Col md='6'>
+                        <InputGroup>
+                            <InputGroupAddon addonType="prepend">
+                                <InputGroupText>Username</InputGroupText>
+                            </InputGroupAddon>
+                            <Input />
+                        </InputGroup>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col md='3'></Col>
+                    <Col md='6'>
+                        <InputGroup>
+                            <InputGroupAddon addonType="prepend">
+                                <InputGroupText>Password</InputGroupText>
+                            </InputGroupAddon>
+                            <Input />
+                        </InputGroup>
+                    </Col>
+                </Row>
                 <br />
-                <FormGroup check>
-                    <Label check>
-                        <Input type="checkbox" />
-                        Verify humanity?
+                <Row>
+                    <Col md='4'></Col>
+                    <Col md='4'>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="checkbox" />
+                                Verify humanity?
                     </Label>
-                </FormGroup>
-
+                        </FormGroup>
+                    </Col>
+                </Row>
                 <br />
-                <Button color="primary">Login</Button>
+                <Row>
+                    <Col md='4'></Col>
+                    <Col md='4'>
+                        <Button color="primary">Login</Button>
+                    </Col>
+                </Row>
             </div>
         );
     };
