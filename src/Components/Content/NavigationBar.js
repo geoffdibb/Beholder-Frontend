@@ -35,7 +35,7 @@ export default class NavigationBar extends React.Component {
                                 <NavLink href="/home">Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/SearchResults">Search Results</NavLink>
+                                <NavLink href="/home/Results">Search Results</NavLink>
                             </NavItem>
                             <NavItem>
                                 <div></div>
@@ -45,7 +45,7 @@ export default class NavigationBar extends React.Component {
                     <Col md='4'>
                         <NavbarBrand className="mx-auto" href="/" >
                             <img
-                                src="../../logo.png"
+                                src="../logo.png"
                                 width="160"
                                 height="39"
                                 alt="Beholder logo"

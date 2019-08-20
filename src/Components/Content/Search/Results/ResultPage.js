@@ -15,6 +15,9 @@ export default class ResultPage extends React.Component {
                         />
              ))} */}
              <ResultPannel />
+             <ResultPannel />
+             <ResultPannel />
+             <ResultPannel />
             </div>
         );
     };

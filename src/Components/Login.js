@@ -12,8 +12,8 @@ export default class Login extends React.Component {
         return (
             <div>
                 <img className='Logo'
-                    src="../../logo.png"
-                    alt="React Bootstrap logo"
+                    src="logo.png"
+                    alt="Beholder Logo"
                 />
                 <Row>
                     <Col md='4'></Col>
