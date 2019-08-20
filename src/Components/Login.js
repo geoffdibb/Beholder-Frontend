@@ -26,7 +26,7 @@ export default class Login extends React.Component {
                     <Col md='6'>
                         <InputGroup>
                             <InputGroupAddon addonType="prepend">
-                                <InputGroupText>Username</InputGroupText>
+                                <InputGroupText style={{ width:'100px' }}>Username</InputGroupText>
                             </InputGroupAddon>
                             <Input />
                         </InputGroup>
@@ -37,7 +37,7 @@ export default class Login extends React.Component {
                     <Col md='6'>
                         <InputGroup>
                             <InputGroupAddon addonType="prepend">
-                                <InputGroupText>Password</InputGroupText>
+                                <InputGroupText style={{ width:'100px' }}>Password</InputGroupText>
                             </InputGroupAddon>
                             <Input />
                         </InputGroup>

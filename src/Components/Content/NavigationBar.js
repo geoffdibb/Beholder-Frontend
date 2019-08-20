@@ -9,6 +9,7 @@ import {
     NavLink,
     Col
 } from 'reactstrap';
+import BackButton from './BackButton';
 
 
 export default class NavigationBar extends React.Component {
@@ -38,7 +39,7 @@ export default class NavigationBar extends React.Component {
                                 <NavLink href="/home/Results">Search Results</NavLink>
                             </NavItem>
                             <NavItem>
-                                <div></div>
+                                <BackButton />
                             </NavItem>
                         </Nav>
                     </Col>

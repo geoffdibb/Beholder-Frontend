@@ -11,12 +11,13 @@ export default class App extends React.Component {
     return (
       <div className='App'>
         <Router>
+          <div>
 
-          <Route path="/Home" component={Homepage} />
+            <Route path="/Home" component={Homepage} />
 
-          <Route exact path="/" component={Login} />
+            <Route exact path="/" component={Login} />
 
-          {/* <Route path="/MapPage" component={MapPage} />
+            {/* <Route path="/MapPage" component={MapPage} />
 
           <Route path="/Profile" component={Profile} />
 
@@ -25,7 +26,7 @@ export default class App extends React.Component {
           <Route path="/SearchPage" component={SearchPage} />
 
           <Route path="/Audit" component={Audit} /> */}
-
+          </div>
         </Router>
       </div>
     )
