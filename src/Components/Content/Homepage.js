@@ -11,6 +11,7 @@ import Profile from './Search/Results/Citezen/Profile';
 import ResultPage from './Search/Results/ResultPage';
 import SearchPage from './Search/SearchPage';
 import Audit from './Audit';
+import VehicleProfile from './Search/Results/Vehicle/VehicleProfile';
 
 export default class Homepage extends React.Component {
 
@@ -34,6 +35,8 @@ export default class Homepage extends React.Component {
                         <Route exact path="/home/" component={SearchPage} />
 
                         <Route path="/home/Audit" component={Audit} />
+
+                        <Route path="/home/Vehicle" component={VehicleProfile} />
                     </Col>
                     <Col md='1'></Col>
                 </Row>
