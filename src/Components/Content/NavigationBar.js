@@ -1,0 +1,74 @@
+import React from 'react';
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    Col
+} from 'reactstrap';
+
+
+export default class NavigationBar extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            isOpen: false
+        };
+    }
+    toggle() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+    render() {
+        return (
+            <div>
+                <Navbar color="dark" dark expand="md">
+                    <Col md='4'>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink href="/home">Home</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/SearchResults">Search Results</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <div></div>
+                            </NavItem>
+                        </Nav>
+                    </Col>
+                    <Col md='4'>
+                        <NavbarBrand className="mx-auto" href="/" >
+                            <img
+                                src="../../logo.png"
+                                width="160"
+                                height="39"
+                                alt="Beholder logo"
+                            />
+                        </NavbarBrand>
+                    </Col>
+                    <Col md='4'>
+                        <NavbarToggler onClick={this.toggle} />
+                        <Collapse isOpen={this.state.isOpen} navbar>
+
+                            <Nav className="ml-auto" navbar>
+
+                                <NavItem>
+                                    <NavLink href="./Login">Login</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="/">Log Out</NavLink>
+                                </NavItem>
+                            </Nav>
+                        </Collapse>
+                    </Col>
+                </Navbar>
+            </div>
+        );
+    }
+}

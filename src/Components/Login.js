@@ -12,7 +12,7 @@ export default class Login extends React.Component {
         return (
             <div>
                 <img className='Logo'
-                    src="../../LucyVariant.png"
+                    src="../../logo.png"
                     alt="React Bootstrap logo"
                 />
                 <Row>
