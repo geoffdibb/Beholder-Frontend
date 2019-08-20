@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ResultPannel from './ResultPannel'
+import ResultPanel from './ResultPanel'
 
 export default class ResultList extends React.Component {
 
@@ -9,16 +9,16 @@ export default class ResultList extends React.Component {
             <div>
 
                 {/* {this.props.data.map(Result => (
-                    <ResultPannel
+                    <ResultPanel
                         key={Result._id}
                         username={Result.username}
                         content={Result.content}
                         />
              ))} */}
-                <ResultPannel />
-                <ResultPannel />
-                <ResultPannel />
-                <ResultPannel />
+                <ResultPanel />
+                <ResultPanel />
+                <ResultPanel />
+                <ResultPanel />
             </div>
         );
     };

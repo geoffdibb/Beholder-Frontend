@@ -4,12 +4,18 @@ import {
     Col,
     Button
 } from 'reactstrap';
+import ExpandCollapse from 'react-expand-collapse';
 
-export default class ResultPannel extends React.Component {
+export default class AssociatePannel extends React.Component {
+
+expanddetails(){
+
+}
 
     render() {
         return (
             <div>
+                
                 <Row>
                     <Col md='2'></Col>
                     <Col sm={{ size: '8', offset: 0 }}>
@@ -19,8 +25,8 @@ export default class ResultPannel extends React.Component {
                                     <Col sm={{ size: 'auto', offset: 0 }}>
                                         <img
                                             src="../../blankicon.png"
-                                            width="100"
-                                            height="100"
+                                            width="50"
+                                            height="50"
                                             alt="Profile"
                                         />
                                     </Col>
@@ -31,11 +37,12 @@ export default class ResultPannel extends React.Component {
                                         <p>placeholder name</p>
                                     </Col>
                                     <Col sm={{ size: 'auto', offset: 0 }}>
-                                        <h4>City</h4>
-                                        <p>Placeholder City</p>
+                                        <h4>Phone Calls</h4>
+                                        <p>Placeholder Calls</p>
                                     </Col>
                                     <Col sm={{ size: 'auto', offset: 0 }} >
-                                        <Button outline color="primary">More Info</Button>{' '}
+                                        <Button onClick={this.expanddetails} outline color="primary">More Info</Button>{' '}
+
                                     </Col>
                                 </Row>
                             </Row>

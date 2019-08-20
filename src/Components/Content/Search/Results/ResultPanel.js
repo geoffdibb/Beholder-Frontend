@@ -4,9 +4,13 @@ import {
     Col,
     Button
 } from 'reactstrap';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Profile from "./Citizen/Profile";
 
-export default class ResultPannel extends React.Component {
+export default class ResultPanel extends React.Component {
 
+ProfilePage(){
+}
     render() {
         return (
             <div>
@@ -35,7 +39,11 @@ export default class ResultPannel extends React.Component {
                                         <p>Placeholder City</p>
                                     </Col>
                                     <Col sm={{ size: 'auto', offset: 0 }} >
-                                        <Button outline color="primary">More Info</Button>{' '}
+
+                                                <Button onClick={this.ProfilePage}>Profile</Button>
+                                                <Route exact path="/Profile/:userId" component={Profile} />
+
+
                                     </Col>
                                 </Row>
                             </Row>

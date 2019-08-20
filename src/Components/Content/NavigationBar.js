@@ -44,7 +44,7 @@ export default class NavigationBar extends React.Component {
                         </Nav>
                     </Col>
                     <Col md='4'>
-                        <NavbarBrand className="mx-auto" href="/" >
+                        <NavbarBrand className="mx-auto" href="/home" >
                             <img
                                 src="../logo.png"
                                 width="160"

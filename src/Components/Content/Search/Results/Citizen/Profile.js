@@ -93,7 +93,7 @@ export default class Map extends React.Component {
                                         </Row>
                                         <Row>
                                             <Col sm={{ size: '5', offset: 0 }}>
-                                                <h5>Citezen ID</h5>
+                                                <h5>Citizen ID</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
                                                 <p>Placeholder ID</p>

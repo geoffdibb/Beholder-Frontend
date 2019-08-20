@@ -7,7 +7,7 @@ import {
 } from 'reactstrap';
 
 import MapPage from './Search/Results/MapPage';
-import Profile from './Search/Results/Citezen/Profile';
+import Profile from './Search/Results/Citizen/Profile';
 import ResultPage from './Search/Results/ResultPage';
 import SearchPage from './Search/SearchPage';
 import Audit from './Audit';

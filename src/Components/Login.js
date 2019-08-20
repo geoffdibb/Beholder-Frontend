@@ -50,7 +50,7 @@ export default class Login extends React.Component {
                         <FormGroup check>
                             <Label check>
                                 <Input type="checkbox" />
-                                Verify humanity?
+                               Check here if you are not a bot?
                     </Label>
                         </FormGroup>
                     </Col>

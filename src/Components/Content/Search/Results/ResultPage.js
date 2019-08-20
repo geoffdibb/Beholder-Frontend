@@ -13,7 +13,7 @@ export default class ResultPage extends React.Component {
                 <Form inline style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
                     {/* {this.props.data.map(Result => (
-                    <ResultPannel
+                    <ResultPanel
                         key={Result._id}
                         username={Result.username}
                         content={Result.content}
@@ -32,6 +32,7 @@ export default class ResultPage extends React.Component {
                     <Col md='8'>
                         <ResultList />
                     </Col>
+
                 </Row>
             </div>
         );
