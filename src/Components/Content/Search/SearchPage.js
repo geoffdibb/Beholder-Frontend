@@ -14,11 +14,13 @@ export default class SearchPage extends React.Component {
                 <h1>Search</h1>
                 <br></br>
                 <Form>
-                    <SearchForm />
+                    <Row style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <SearchForm />
+                    </Row>
                     <Row>
                         <Col md='4'></Col>
                         <Col md='4'>
-                        <Button>Search</Button>
+                            <Button>Search</Button>
                         </Col>
                         <Col md='4'></Col>
                     </Row>

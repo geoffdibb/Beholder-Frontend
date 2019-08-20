@@ -36,10 +36,10 @@ export default class NavigationBar extends React.Component {
                                 <NavLink href="/home">Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/home/Results">Search Results</NavLink>
+                                <BackButton />
                             </NavItem>
                             <NavItem>
-                                <BackButton />
+                                <NavLink href="/home/Results">Search Results</NavLink>
                             </NavItem>
                         </Nav>
                     </Col>
@@ -56,12 +56,7 @@ export default class NavigationBar extends React.Component {
                     <Col md='4'>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
-
                             <Nav className="ml-auto" navbar>
-
-                                <NavItem>
-                                    <NavLink href="./Login">Login</NavLink>
-                                </NavItem>
                                 <NavItem>
                                     <NavLink href="/">Log Out</NavLink>
                                 </NavItem>

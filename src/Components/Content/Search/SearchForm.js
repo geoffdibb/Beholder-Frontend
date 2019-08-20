@@ -1,12 +1,12 @@
 import React from 'react';
 import { FormGroup, Label, Input, Row } from 'reactstrap';
 
-export default class SearchPage extends React.Component {
+export default class SearchForm extends React.Component {
 
 
     render() {
         return (
-            <Row style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <FormGroup>
                     <Label for="Catagory" hidden>Catagoy</Label>
                     <Input type="select">
@@ -20,7 +20,7 @@ export default class SearchPage extends React.Component {
                     <Label for="Search" hidden>Search</Label>
                     <Input type="search" name="search" id="Search" placeholder="Search" />
                 </FormGroup>
-            </Row>
+            </div>
         )
     }
 }

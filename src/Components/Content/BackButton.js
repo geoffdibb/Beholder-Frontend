@@ -5,6 +5,5 @@ import {
     NavItem
 } from 'reactstrap';
 
-// const GoBack = ({ history }) => <img src="./images/back.png" onClick={() => history.goBack()} alt="Go back" />;
 const GoBack = ({ history }) => <NavItem><NavLink onClick={() => history.goBack()}>Back</NavLink></NavItem>
 export default withRouter(GoBack);
