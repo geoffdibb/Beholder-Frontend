@@ -2,13 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import './App.css';
-import Homepage from './Components/Homepage';
+import Homepage from './Components/Content/Homepage';
 import Login from './Components/Login';
-import MapPage from './Components/MapPage';
-import Profile from './Components/Profile';
-import ResultPage from './Components/ResultPage';
-import SearchPage from './Components/SearchPage';
-import Audit from './Components/Audit';
 
 export default class App extends React.Component {
 
@@ -16,12 +11,13 @@ export default class App extends React.Component {
     return (
       <div className='App'>
         <Router>
+          <div>
 
-          <Route path="/Home" component={Homepage} />
+            <Route path="/Home" component={Homepage} />
 
-          <Route exact path="/" component={Login} />
+            <Route exact path="/" component={Login} />
 
-          <Route path="/MapPage" component={MapPage} />
+            {/* <Route path="/MapPage" component={MapPage} />
 
           <Route path="/Profile" component={Profile} />
 
@@ -29,8 +25,8 @@ export default class App extends React.Component {
 
           <Route path="/SearchPage" component={SearchPage} />
 
-          <Route path="/Audit" component={Audit} />
-
+          <Route path="/Audit" component={Audit} /> */}
+          </div>
         </Router>
       </div>
     )
