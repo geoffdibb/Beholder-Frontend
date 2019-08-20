@@ -28,7 +28,7 @@ export default class ResultPannel extends React.Component {
                                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <Col sm={{ size: 'auto', offset: 1 }}>
                                         <h4>Name</h4>
-                                        <p>Placeholder Name</p>
+                                        <p>placeholder name</p>
                                     </Col>
                                     <Col sm={{ size: 'auto', offset: 0 }}>
                                         <h4>City</h4>
