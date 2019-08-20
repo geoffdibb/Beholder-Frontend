@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormGroup, Label, Input, Row } from 'reactstrap';
+import { FormGroup, Label, Input } from 'reactstrap';
 
 export default class SearchForm extends React.Component {
 

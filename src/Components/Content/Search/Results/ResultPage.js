@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, Form, Row, Col } from 'reactstrap';
+import { Button, Form, Col, Row } from 'reactstrap';
 
-import ResultPannel from './ResultPannel'
 import SearchForm from '../SearchForm';
+import ResultList from './ResultList';
 
 export default class ResultPage extends React.Component {
 
@@ -11,6 +11,14 @@ export default class ResultPage extends React.Component {
             <div>
                 <h2>Results</h2>
                 <Form inline style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+
+                    {/* {this.props.data.map(Result => (
+                    <ResultPannel
+                        key={Result._id}
+                        username={Result.username}
+                        content={Result.content}
+                        />
+             ))} */}
                     <SearchForm />
                     <SearchForm />
                     <SearchForm />
@@ -19,20 +27,12 @@ export default class ResultPage extends React.Component {
                         <Button>Modify Search</Button>
                     </Col>
                 </Form>
-
-
-
-                {/* {this.props.data.map(Result => (
-                    <ResultPannel
-                        key={Result._id}
-                        username={Result.username}
-                        content={Result.content}
-                        />
-             ))} */}
-                <ResultPannel />
-                <ResultPannel />
-                <ResultPannel />
-                <ResultPannel />
+                <br></br>
+                <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
+                    <Col md='8'>
+                        <ResultList />
+                    </Col>
+                </Row>
             </div>
         );
     };

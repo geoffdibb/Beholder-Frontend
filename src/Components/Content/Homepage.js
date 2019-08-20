@@ -6,8 +6,8 @@ import {
     Col
 } from 'reactstrap';
 
-import MapPage from './Search/MapPage';
-import Profile from './Search/Profile';
+import MapPage from './Search/Results/MapPage';
+import Profile from './Search/Results/Citezen/Profile';
 import ResultPage from './Search/Results/ResultPage';
 import SearchPage from './Search/SearchPage';
 import Audit from './Audit';
@@ -23,8 +23,8 @@ export default class Homepage extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col md='3'></Col>
-                    <Col md='6'>
+                    <Col md='1'></Col>
+                    <Col md='10'>
                         <Route path="/home/MapPage" component={MapPage} />
 
                         <Route path="/home/Profile" component={Profile} />
@@ -35,7 +35,7 @@ export default class Homepage extends React.Component {
 
                         <Route path="/home/Audit" component={Audit} />
                     </Col>
-                    <Col md='3'></Col>
+                    <Col md='1'></Col>
                 </Row>
             </div>
         );
