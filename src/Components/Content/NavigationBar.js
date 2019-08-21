@@ -38,6 +38,7 @@ export default class NavigationBar extends React.Component {
                             <NavItem>
                                 <BackButton />
                             </NavItem>
+                                    
                             <NavItem>
                                 <NavLink href="/home/Results">Search Results</NavLink>
                             </NavItem>
