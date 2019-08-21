@@ -4,5 +4,11 @@ import {
     NavLink
 } from 'reactstrap';
 
-const GoBack = ({ history }) => <NavLink onClick={() => history.goBack()}>Back</NavLink>
+const GoBack = ({ history }) => <NavLink  onMouseEnter={() => {
+          document.body.style.cursor = "pointer";
+        }}
+        onMouseLeave={() => {
+          document.body.style.cursor = "default";
+        }} onClick={() => history.goBack()}>Back</NavLink>
 export default withRouter(GoBack);
+
