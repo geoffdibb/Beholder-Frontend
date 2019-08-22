@@ -13,7 +13,8 @@ export default class App extends React.Component {
     this.state = {
       username: "",
       apitoken: "",
-      load: [1, 1]
+      invalid: false,
+      feedback:"Please enter valid details"
     };
 
   }
@@ -40,21 +41,15 @@ export default class App extends React.Component {
       .then(this.setState({
         page: '{() => <Homepage />}'
       }))
-      .catch(error => { console.log(error) })
+      .catch(error => { console.log(error);
+         this.setState({invalid: true}) })
   }
 
-  homeScreen1 = () => {
-    if (this.state.apitoken === "") {
-      return <Route exact path="/" render={() => <Login logIn={this.logIn} />} />
-    } else {
-      return <Route exact path="/" component={Homepage} />
-    }
-  }
 
   render() {
     var homeScreen = <Route exact path="/" component={Homepage} />;
     if (this.state.apitoken === "") {
-      homeScreen = <Route exact path="/" render={() => <Login logIn={this.logIn} />} />;
+      homeScreen = <Route exact path="/" render={() => <Login logIn={this.logIn} invalid={this.state.invalid} feedback={this.state.feedback} />} />;
     }
     return (
       <div className='App'>

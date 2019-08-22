@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Button, InputGroup,
     //  FormText, 
-    Form, FormGroup, Label, InputGroupText, InputGroupAddon, Input, Row, Col
+    Form, FormGroup,FormFeedback, FormText, Label, InputGroupText, InputGroupAddon, Input, Row, Col
 } from 'reactstrap';
 
 
@@ -45,7 +45,7 @@ export default class Login extends React.Component {
                                 <InputGroupAddon addonType="prepend">
                                     <InputGroupText style={{ width: '100px' }}>Username</InputGroupText>
                                 </InputGroupAddon>
-                                <Input type="username" name="username" id="username" placeholder="username" />
+                                <Input type="username" name="username" id="username" placeholder="username" invalid={this.props.invalid} />
                             </InputGroup>
                         </Col>
                     </Row>
@@ -55,7 +55,9 @@ export default class Login extends React.Component {
                                 <InputGroupAddon addonType="prepend">
                                 </InputGroupAddon>
                                 <InputGroupText type="password" name="password" style={{ width: '100px' }}>Password</InputGroupText>
-                                <Input type="password" name="password" id="Password" placeholder="password" />
+                                <Input type="password" name="password" id="Password" placeholder="password" invalid={this.props.invalid} />
+                                                            <FormFeedback>{this.props.feedback}</FormFeedback>
+
                             </InputGroup>
                         </Col>
                     </Row>
