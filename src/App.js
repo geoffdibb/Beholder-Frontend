@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import axios from 'axios';
 
 import './App.css';
 import Homepage from './Components/Content/Homepage';
@@ -7,15 +8,65 @@ import Login from './Components/Login';
 
 export default class App extends React.Component {
 
+  constructor() {
+    super()
+    this.state = {
+      username: "",
+      apitoken: "",
+      load: [1, 1]
+    };
+
+  }
+
+  logIn = (username, password) => {
+    console.log(username);
+    console.log(password);
+    this.setState({
+      username: username
+    })
+    let body = {
+      username: username,
+      password: password,
+    }
+    axios.post("http://localhost:5001/loginUser", body)
+      .then(response => {
+        console.log(response.data);
+        console.log(response.data.message);
+        this.setState({
+          apitoken: response.data.token
+        })
+
+      })
+      .then(this.setState({
+        page: '{() => <Homepage />}'
+      }))
+      .catch(error => { console.log(error) })
+  }
+
+  homeScreen1 = () => {
+    if (this.state.apitoken === "") {
+      return <Route exact path="/" render={() => <Login logIn={this.logIn} />} />
+    } else {
+      return <Route exact path="/" component={Homepage} />
+    }
+  }
+
   render() {
+    var homeScreen = <Route exact path="/" component={Homepage} />;
+    if (this.state.apitoken === "") {
+      homeScreen = <Route exact path="/" render={() => <Login logIn={this.logIn} />} />;
+    }
     return (
       <div className='App'>
         <Router>
           <div>
+            {homeScreen}
+            {/* <Route exact path="/" render={this.state.page} /> */}
 
-            <Route path="/Home" component={Homepage} />
+            {/* <Route path="/Home" component={Homepage} /> */}
 
-            <Route exact path="/" component={Login} />
+            {/* <Route exact path="/" component={Login } /> */}
+            {/* <Route exact path="/" render={() => <Login logIn={this.logIn} />} /> */}
 
             {/* <Route path="/MapPage" component={MapPage} />
 

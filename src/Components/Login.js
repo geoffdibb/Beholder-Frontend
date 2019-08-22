@@ -1,12 +1,30 @@
 import React from 'react';
 import {
     Button, InputGroup,
-    //  FormText, Form,
-    FormGroup, Label, InputGroupText, InputGroupAddon, Input, Row, Col
+    //  FormText, 
+    Form, FormGroup, Label, InputGroupText, InputGroupAddon, Input, Row, Col
 } from 'reactstrap';
 
 
 export default class Login extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            checked: false
+        };
+    }
+
+    handleCheckboxChange = (e) => {
+        this.setState({ checked: e.target.checked });
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        let username = e.target[0].value
+        let password = e.target[1].value
+        this.props.logIn(username, password)
+    }
 
     render() {
         return (
@@ -15,53 +33,50 @@ export default class Login extends React.Component {
                     src="logo.png"
                     alt="Beholder Logo"
                 />
-                <Row>
-                    <Col md='4'></Col>
-                    <Col md='4'>
-                    <h1>Welcome</h1>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md='3'></Col>
-                    <Col md='6'>
-                        <InputGroup>
-                            <InputGroupAddon addonType="prepend">
-                                <InputGroupText style={{ width:'100px' }}>Username</InputGroupText>
-                            </InputGroupAddon>
-                            <Input />
-                        </InputGroup>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md='3'></Col>
-                    <Col md='6'>
-                        <InputGroup>
-                            <InputGroupAddon addonType="prepend">
-                                <InputGroupText style={{ width:'100px' }}>Password</InputGroupText>
-                            </InputGroupAddon>
-                            <Input />
-                        </InputGroup>
-                    </Col>
-                </Row>
-                <br />
-                <Row>
-                    <Col md='4'></Col>
-                    <Col md='4'>
-                        <FormGroup check>
-                            <Label check>
-                                <Input type="checkbox" />
-                               Check here if you are not a bot?
-                    </Label>
-                        </FormGroup>
-                    </Col>
-                </Row>
-                <br />
-                <Row>
-                    <Col md='4'></Col>
-                    <Col md='4'>
-                        <Button color="primary">Login</Button>
-                    </Col>
-                </Row>
+                <Form onSubmit={this.handleSubmit}>
+                    <Row>
+                        <Col sm={{ size: '4', offset: 4 }}>
+                            <h1>Welcome</h1>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={{ size: '6', offset: 3 }}>
+                            <InputGroup>
+                                <InputGroupAddon addonType="prepend">
+                                    <InputGroupText style={{ width: '100px' }}>Username</InputGroupText>
+                                </InputGroupAddon>
+                                <Input type="username" name="username" id="username" placeholder="username" />
+                            </InputGroup>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={{ size: '6', offset: 3 }}>
+                            <InputGroup>
+                                <InputGroupAddon addonType="prepend">
+                                </InputGroupAddon>
+                                <InputGroupText type="password" name="password" style={{ width: '100px' }}>Password</InputGroupText>
+                                <Input type="password" name="password" id="Password" placeholder="password" />
+                            </InputGroup>
+                        </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                        <Col sm={{ size: '4', offset: 4 }} style={{ justifyContent: 'center', alignItems: 'center' }}>
+                            {/* <InputGroup check>
+                                 <Label check>  */}
+                            <Input type="checkbox" checked={this.state.checked} onChange={this.handleCheckboxChange} />
+                            Check here if you are not a bot?
+                                 {/* </Label> 
+                            </InputGroup> */}
+                        </Col>
+                    </Row>
+                    <br />
+                    <Row>
+                        <Col sm={{ size: '4', offset: 4 }}>
+                            <Button color="primary" disabled={!this.state.checked}>Login</Button>
+                        </Col>
+                    </Row>
+                </Form>
             </div>
         );
     };

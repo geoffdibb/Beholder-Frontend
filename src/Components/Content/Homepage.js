@@ -25,15 +25,15 @@ export default class Homepage extends React.Component {
                 <Row>
                     <Col md='1'></Col>
                     <Col md='10'>
-                        <Route path="/home/MapPage" component={MapPage} />
+                        <Route path="/MapPage" component={MapPage} />
 
-                        <Route path="/home/Profile" component={Profile} />
+                        <Route path="/Profile" component={Profile} />
 
-                        <Route path="/home/Results" component={ResultPage} />
+                        <Route path="/Results" component={ResultPage} />
 
-                        <Route exact path="/home/" component={SearchPage} />
+                        <Route exact path="/" component={SearchPage} />
 
-                        <Route path="/home/Audit" component={Audit} />
+                        <Route path="/Audit" component={Audit} />
                     </Col>
                     <Col md='1'></Col>
                 </Row>
