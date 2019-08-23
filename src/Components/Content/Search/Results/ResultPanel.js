@@ -4,8 +4,7 @@ import {
     Col,
     Button
 } from 'reactstrap';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Profile from "./Citizen/Profile";
+import { Link } from "react-router-dom";
 
 export default class ResultPanel extends React.Component {
 
@@ -31,11 +30,11 @@ export default class ResultPanel extends React.Component {
                                     </Col>
                                 </div>
                                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <Col sm={{ size: 'auto', offset: 1 }}>
+                                    <Col sm={{ size: '5', offset: 1 }}>
                                         <h4>Name</h4>
                                         <p>{this.props.forenames} {this.props.surname}</p>
                                     </Col>
-                                    <Col sm={{ size: 'auto', offset: 0 }}>
+                                    <Col sm={{ size: '5', offset: 1 }}>
                                         <h4>Address</h4>
                                         <p>{this.props.homeAddress}</p>
                                     </Col>

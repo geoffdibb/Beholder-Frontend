@@ -1,8 +1,7 @@
 import React from 'react';
 import {
     Button, InputGroup,
-    //  FormText, 
-    Form, FormGroup,FormFeedback, FormText, Label, InputGroupText, InputGroupAddon, Input, Row, Col
+    Form, FormFeedback, InputGroupText, InputGroupAddon, Input, Row, Col
 } from 'reactstrap';
 
 
@@ -75,7 +74,7 @@ export default class Login extends React.Component {
                     <br />
                     <Row>
                         <Col sm={{ size: '4', offset: 4 }}>
-                            <Button color="primary" disabled={!this.state.checked}>Login</Button>
+                            <Button color="dark" disabled={!this.state.checked}>Login</Button>
                         </Col>
                     </Row>
                 </Form>

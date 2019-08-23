@@ -7,7 +7,6 @@ import {
     CardBody,
     Card
 } from 'reactstrap';
-import ExpandCollapse from 'react-expand-collapse';
 
 export default class AssociatePannel extends React.Component {
 

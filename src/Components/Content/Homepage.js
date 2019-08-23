@@ -39,13 +39,10 @@ export default class Homepage extends React.Component {
             'Content-Type': 'application/json',
             'Authorization': this.props.apitoken
         }
-        console.log(category);
-        console.log(searchTerm);
         this.setState({
             category: category,
             searchTerm: searchTerm
         })
-        console.log(headers);
         axios.get("http://localhost:5001/search/" + this.props.username + "/" + category + "/" + searchTerm, { headers })
             .then(response => {
                 console.log(response.data);
@@ -68,7 +65,6 @@ export default class Homepage extends React.Component {
         this.setState({
             profileData: result
         });
-        console.log(headers);
         axios.get("http://localhost:5001/search/" + this.props.username + "/getAssociates/" + result.citizenId, { headers })
             .then(response => {
                 console.log(response.data);
