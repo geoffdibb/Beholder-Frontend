@@ -24,6 +24,7 @@ export default class AssociatePannel extends React.Component {
 
     }
 
+
     render() {
         return (
             <div>
@@ -31,7 +32,7 @@ export default class AssociatePannel extends React.Component {
                 <Row>
                     <Col md='2'></Col>
                     <Col sm={{ size: '8', offset: 0 }}>
-                        <div className="p-2 bg-info my-1 rounded   "color='#474C55'>
+                        <div className="p-2 bg-info my-1 rounded">
                             <Row>
                                 <div className="p-2 bg-secondary my-1 rounded">
                                     <Col sm={{ size: 'auto', offset: 0 }}>
@@ -50,7 +51,7 @@ export default class AssociatePannel extends React.Component {
                                     </Col>
 
                                     <Col sm={{ size: 'auto', offset: 0 }} >
-                                        <Button onClick={this.toggle} outline color="primary">More Info</Button>{' '}
+                                        <Button onClick={this.toggle} color="primary">More Info</Button>{' '}
 
                                     </Col>
                                     <Collapse isOpen={this.state.collapse}>
