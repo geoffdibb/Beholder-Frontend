@@ -104,7 +104,7 @@ export default class Map extends React.Component {
                     </Col>
                     <Col sm={{ size: '3', offset: 0 }}>
                         <h3>Associates</h3>
-                        <AssociateList />
+                        <AssociateList associates={this.props.associates} />
                     </Col>
                 </Row>
 
