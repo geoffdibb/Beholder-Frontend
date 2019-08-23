@@ -30,7 +30,7 @@ export default class ResultPage extends React.Component {
                 <br></br>
                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Col md='8'>
-                        <ResultList />
+                        <ResultList searchResults={this.props.searchResults} search={this.props.search} selectProfile={this.props.selectProfile} />
                     </Col>
 
                 </Row>

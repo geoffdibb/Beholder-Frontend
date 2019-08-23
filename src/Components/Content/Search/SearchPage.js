@@ -17,20 +17,11 @@ export default class SearchPage extends React.Component {
 
     searchdb = (e) => {
         e.preventDefault();
-        let name = e.target[0].value;
-        if (name === "") {
-            this.setState({ message: "Please fill all fields" })
+        let category = e.target[0].value;
+        if (category === "") {
+            this.setState({ message: "Please fill all fields" });
         } else {
-            axios
-                .get("http://localhost:8080/search/name/" + name)
-                .then(response => {
-                    this.setState({
-                        responseData: (response.data)
-                    });
-                    this.props.passedFunction();
-                })
-                .catch(err => { this.setState({ message: "name not found" }); });
-
+            this.props.search(category, e.target[1].value);
         }
     }
 

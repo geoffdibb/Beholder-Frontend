@@ -4,13 +4,14 @@ import {
     Col,
     Button
 } from 'reactstrap';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Profile from "./Citizen/Profile";
 
 export default class ResultPanel extends React.Component {
 
-ProfilePage(){
-}
+    ProfilePage = () => {
+        this.props.selectProfile(this.props.result);
+    }
     render() {
         return (
             <div>
@@ -32,18 +33,16 @@ ProfilePage(){
                                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <Col sm={{ size: 'auto', offset: 1 }}>
                                         <h4>Name</h4>
-                                        <p>placeholder name</p>
+                                        <p>{this.props.forenames} {this.props.surname}</p>
                                     </Col>
                                     <Col sm={{ size: 'auto', offset: 0 }}>
-                                        <h4>City</h4>
-                                        <p>Placeholder City</p>
+                                        <h4>Address</h4>
+                                        <p>{this.props.homeAddress}</p>
                                     </Col>
                                     <Col sm={{ size: 'auto', offset: 0 }} >
-
-                                                <Button onClick={this.ProfilePage}>Profile</Button>
-                                                <Route exact path="/Profile/:userId" component={Profile} />
-
-
+                                        <Link to={`/Profile`}>
+                                            <Button onClick={this.ProfilePage}>Profile</Button>
+                                        </Link>
                                     </Col>
                                 </Row>
                             </Row>

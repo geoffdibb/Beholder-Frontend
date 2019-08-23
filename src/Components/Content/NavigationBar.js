@@ -33,7 +33,7 @@ export default class NavigationBar extends React.Component {
                     <Col md='4'>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="/">Home</NavLink>
+                                <NavLink href="/" >Home</NavLink>
                             </NavItem>
                             <NavItem>
                                 <BackButton />
@@ -45,7 +45,7 @@ export default class NavigationBar extends React.Component {
                         </Nav>
                     </Col>
                     <Col md='4'>
-                        <NavbarBrand className="mx-auto" href="/" >
+                        <NavbarBrand className="mx-auto" href="/"  >
                             <img
                                 src="../logo.png"
                                 width="160"
@@ -59,7 +59,7 @@ export default class NavigationBar extends React.Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
-                                    <NavLink href="/">Log Out</NavLink>
+                                    <NavLink href="/" >Log Out</NavLink>
                                 </NavItem>
                             </Nav>
                         </Collapse>

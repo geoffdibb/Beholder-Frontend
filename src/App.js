@@ -11,13 +11,14 @@ export default class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      username: "",
-      apitoken: "",
+      username: "user5",
+      apitoken: "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkNWQ2OTI2MzYxNDNjMWViODU5ZThmYSIsImlhdCI6MTU2NjU1MjIxOCwiZXhwIjoxNTY2NTU1ODE4fQ.fusN7ht7XMEFQKuhdKIGHpLuocvTUrkDMHEUPSAFcNQ",
       invalid: false,
-      feedback:"Please enter valid details"
+      feedback: "Please enter valid details"
     };
 
   }
+
 
   logIn = (username, password) => {
     console.log(username);
@@ -34,22 +35,20 @@ export default class App extends React.Component {
         console.log(response.data);
         console.log(response.data.message);
         this.setState({
-          apitoken: response.data.token
+          apitoken: "jwt "+response.data.token
         })
-
       })
-      .then(this.setState({
-        page: '{() => <Homepage />}'
-      }))
-      .catch(error => { console.log(error);
-         this.setState({invalid: true}) })
+      .catch(error => {
+        console.log(error);
+        this.setState({ invalid: true })
+      })
   }
 
 
   render() {
-    var homeScreen = <Route exact path="/" component={Homepage} />;
+    var homeScreen = <Route path="/" render={() => <Homepage username={this.state.username} apitoken={this.state.apitoken} />} />
     if (this.state.apitoken === "") {
-      homeScreen = <Route exact path="/" render={() => <Login logIn={this.logIn} invalid={this.state.invalid} feedback={this.state.feedback} />} />;
+      homeScreen = <Route path="/" render={() => <Login logIn={this.logIn} invalid={this.state.invalid} feedback={this.state.feedback} />} />
     }
     return (
       <div className='App'>
