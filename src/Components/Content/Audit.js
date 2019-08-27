@@ -1,8 +1,18 @@
 import React from 'react';
-import { Button, Form, Col, Row, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, Col, Row, FormGroup, Label, Input, Table } from 'reactstrap';
 import axios from "axios";
 
 export default class Audit extends React.Component {
+
+     constructor() {
+        super()
+        this.state = {
+            responseauditrequestlogData: [],
+            responsesearchlogData: [],
+            responseaudituseraccesslogData: []
+        };
+
+    }
 
     //auditrequests
     searchauditrequestlog = (e) => {
@@ -17,7 +27,6 @@ export default class Audit extends React.Component {
                 this.setState({
                     responseauditrequestlogData: (response.data)
                 });
-                this.props.passedFunction();
             })
             .catch(err => { this.setState({ message: "Audit logs not found" }); });
 
@@ -37,14 +46,17 @@ export default class Audit extends React.Component {
                 this.setState({
                     responsesearchlogData: (response.data)
                 });
-                this.props.passedFunction();
+
+                console.log(this.state.responsesearchlogData)
             })
-            .catch(err => { this.setState({ message: "Search logs not found" }); });
+            .catch(err => {
+                this.setState({ message: "Search logs not found" });
+            });
 
     }
 
 
-//accesslogs
+    //accesslogs
     searchaudituseraccesslog = (e) => {
         e.preventDefault();
         const headers = {
@@ -57,11 +69,19 @@ export default class Audit extends React.Component {
                 this.setState({
                     responseaudituseraccesslogData: (response.data)
                 });
-                this.props.passedFunction();
             })
-            .catch(err => { this.setState({ message: "User logs not found" }); });
+            .catch(err => {
+                this.setState({ message: "User logs not found" });
+            });
     }
 
+    renderLog(response, index) {
+        return (
+            <tr key={index}>
+                <td>{response.username}</td>
+            </tr>
+        )
+    }
 
     render() {
         return (
@@ -72,20 +92,40 @@ export default class Audit extends React.Component {
 
                         <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                             <Col sm={{ size: '5', offset: 1 }}>
-                                {this.responseauditrequestlogData}
+                                <p>{this.state.responseauditrequestlogData}</p>
                                 <button onClick={this.searchauditrequestlog}> Retrieve audit request Logs </button>
 
                             </Col>
                             <Col>
-                                {this.searchauditsearchlogs}
+                                <p>{this.state.searchauditsearchlogs}</p>
                                 <button onClick={this.searchauditsearchlogs}> Retrieve search Logs </button>
                             </Col>
                             <Col>
-                                {this.responseaudituseraccesslogData}
+                                <p>{this.state.responseaudituseraccesslogData}</p>
                                 <button onClick={this.searchaudituseraccesslog}> Retrieve user access Logs </button>
                             </Col>
                         </Row>
                     </Row>
+                    <Row>
+                        <p>{this.state.responseauditrequestlogData}</p>
+                        <p>{this.state.searchauditsearchlogs}</p>
+                        <p>{this.state.responseaudituseraccesslogData}</p>
+                        <Table striped condensed hover>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Age</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.state.responsesearchlogData.map(this.renderLog)}
+                            </tbody>
+                        </Table>
+
+                    </Row>
+
                 </div>
 
             </div>
