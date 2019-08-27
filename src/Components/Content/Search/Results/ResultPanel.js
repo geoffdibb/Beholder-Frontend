@@ -13,7 +13,7 @@ export default class ResultPanel extends React.Component {
     }
     render() {
         return (
-            <div key={this.props.key}>
+            <div>
                 <Row>
                     <Col md='2'></Col>
                     <Col sm={{ size: '8', offset: 0 }}>
