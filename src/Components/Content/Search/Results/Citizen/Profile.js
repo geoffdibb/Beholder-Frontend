@@ -3,7 +3,7 @@ import { Row, Col } from 'reactstrap';
 
 import AssociateList from './AssociateList';
 
-export default class Map extends React.Component {
+export default class Profile extends React.Component {
 
     render() {
         return (

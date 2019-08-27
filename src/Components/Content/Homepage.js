@@ -7,8 +7,6 @@ import {
 } from 'reactstrap';
 import axios from 'axios';
 
-
-import MapPage from './Search/Results/MapPage';
 import Profile from './Search/Results/Citizen/Profile';
 import ResultPage from './Search/Results/ResultPage';
 import SearchPage from './Search/SearchPage';
@@ -78,7 +76,6 @@ export default class Homepage extends React.Component {
                 <Row>
                     <Col md='1'></Col>
                     <Col md='10'>
-                        <Route path="/MapPage" component={MapPage} />
 
                         <Route path="/Profile" render={() => <Profile search={this.search} profileData={this.state.profileData} associates={this.state.associates} />} />
 
