@@ -42,6 +42,9 @@ export default class NavigationBar extends React.Component {
                             <NavItem>
                                 <NavLink href="/Results">Search Results</NavLink>
                             </NavItem>
+                            <NavItem>
+                                <NavLink href="/Audit">Audit</NavLink>
+                            </NavItem>
                         </Nav>
                     </Col>
                     <Col md='4'>
