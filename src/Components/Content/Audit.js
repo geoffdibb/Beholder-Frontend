@@ -6,9 +6,12 @@ export default class Audit extends React.Component {
 
 searchauditdb =(e) => {
         e.preventDefault();
-       
+               const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': this.props.apitoken
+        }
             axios
-                .get("http://localhost:8083/beholder/getAuditRequestLog/")
+                .get("http://localhost:5001/getauditrequestlog/" + this.props.username , { headers })
                 .then(response => {
                    this.setState({
                     responseData: (response.data)

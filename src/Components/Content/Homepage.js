@@ -108,7 +108,7 @@ export default class Homepage extends React.Component {
 
                         <Route exact path="/" render={() => <SearchPage search={this.search} />} />
 
-                        <Route path="/Audit" component={Audit} />
+                        <Route path="/Audit" render={() => <Audit username={this.props.username} apitoken={this.props.apitoken}/>} />
                     </Col>
                     <Col md='1'></Col>
                 </Row>
