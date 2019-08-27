@@ -19,7 +19,7 @@ export default class Audit extends React.Component {
                 });
                 this.props.passedFunction();
             })
-            .catch(err => { this.setState({ message: "Logs not found" }); });
+            .catch(err => { this.setState({ message: "Audit logs not found" }); });
 
     }
 
@@ -39,7 +39,7 @@ export default class Audit extends React.Component {
                 });
                 this.props.passedFunction();
             })
-            .catch(err => { this.setState({ message: "Logs not found" }); });
+            .catch(err => { this.setState({ message: "Search logs not found" }); });
 
     }
 
@@ -59,7 +59,7 @@ export default class Audit extends React.Component {
                 });
                 this.props.passedFunction();
             })
-            .catch(err => { this.setState({ message: "Logs not found" }); });
+            .catch(err => { this.setState({ message: "User logs not found" }); });
     }
 
 
