@@ -1,36 +1,59 @@
 import React from 'react';
-import { Button, Form, Col, Row } from 'reactstrap';
+import { Button, Form, Col, Row, FormGroup, Label, Input } from 'reactstrap';
 
 import SearchForm from '../SearchForm';
 import ResultList from './ResultList';
 
 export default class ResultPage extends React.Component {
 
+    searchdb = (e) => {
+        e.preventDefault();
+        let category = e.target[0].value;
+        if (e.target[1].value === "") {
+            this.setState({ message: "Please fill all fields" });
+        } else {
+            this.props.search(category, e.target[1].value);
+        }
+    }
     render() {
         return (
             <div>
                 <h2>Results</h2>
-                <Form inline style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Form onSubmit={this.searchdb}>
+                    <Row style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        {/* <SearchForm onRef={ref => (this.SearchForm = ref)}/> */}
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <FormGroup>
+                                <Label for="Category" hidden>Category</Label>
+                                <Input type="select">
+                                    <option>Name</option>
+                                    <option>Location</option>
+                                    <option>Car Reg</option>
+                                    <option>Time</option>
+                                </Input>
+                            </FormGroup>
 
-                    {/* {this.props.data.map(Result => (
-                    <ResultPanel
-                        key={Result._id}
-                        username={Result.username}
-                        content={Result.content}
-                        />
-             ))} */}
-                    <SearchForm />
-                    <SearchForm />
-                    <SearchForm />
-                    <SearchForm />
-                    <Col md='12'>
-                        <Button>Modify Search</Button>
-                    </Col>
+
+                            <FormGroup>
+                                <Label for="Search" hidden>Search</Label>
+                                <Input type="search" name="search" id="Search" placeholder="Search" />
+
+                            </FormGroup>
+
+                        </div>
+                    </Row>
+                    <Row>
+                        <Col md='4'></Col>
+                        <Col md='4'>
+                            <input type="submit" className="btn btn-dark" value="Search" />
+                        </Col>
+                        <Col md='4'></Col>
+                    </Row>
                 </Form>
                 <br></br>
                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Col md='8'>
-                        <ResultList />
+                        <ResultList searchResults={this.props.searchResults} search={this.props.search} selectProfile={this.props.selectProfile} />
                     </Col>
 
                 </Row>

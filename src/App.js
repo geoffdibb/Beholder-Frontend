@@ -8,19 +8,30 @@ import Login from './Components/Login';
 
 export default class App extends React.Component {
 
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //     username: "user5",
+  //     apitoken: "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkNWQ2OTI2MzYxNDNjMWViODU5ZThmYSIsImlhdCI6MTU2NjU3NDkzMCwiZXhwIjoxNTY2NTc4NTMwfQ.5_DjPiHBejXNCpScVWmLppORW_RlhNUNdxGTSUheZEg",
+  //     invalid: false,
+  //     feedback: "Please enter valid details"
+  //   };
+
+  // }
+
   constructor() {
     super()
     this.state = {
       username: "",
       apitoken: "",
-      load: [1, 1]
+      invalid: false,
+      feedback: "Please enter valid details"
     };
 
   }
 
+
   logIn = (username, password) => {
-    console.log(username);
-    console.log(password);
     this.setState({
       username: username
     })
@@ -30,53 +41,27 @@ export default class App extends React.Component {
     }
     axios.post("http://localhost:5001/loginUser", body)
       .then(response => {
-        console.log(response.data);
-        console.log(response.data.message);
         this.setState({
-          apitoken: response.data.token
+          apitoken: "jwt "+response.data.token
         })
-
       })
-      .then(this.setState({
-        page: '{() => <Homepage />}'
-      }))
-      .catch(error => { console.log(error) })
+      .catch(error => {
+        console.log(error);
+        this.setState({ invalid: true })
+      })
   }
 
-  homeScreen1 = () => {
-    if (this.state.apitoken === "") {
-      return <Route exact path="/" render={() => <Login logIn={this.logIn} />} />
-    } else {
-      return <Route exact path="/" component={Homepage} />
-    }
-  }
 
   render() {
-    var homeScreen = <Route exact path="/" component={Homepage} />;
+    var homeScreen = <Route path="/" render={() => <Homepage username={this.state.username} apitoken={this.state.apitoken} />} />
     if (this.state.apitoken === "") {
-      homeScreen = <Route exact path="/" render={() => <Login logIn={this.logIn} />} />;
+      homeScreen = <Route path="/" render={() => <Login logIn={this.logIn} invalid={this.state.invalid} feedback={this.state.feedback} />} />
     }
     return (
       <div className='App'>
         <Router>
           <div>
             {homeScreen}
-            {/* <Route exact path="/" render={this.state.page} /> */}
-
-            {/* <Route path="/Home" component={Homepage} /> */}
-
-            {/* <Route exact path="/" component={Login } /> */}
-            {/* <Route exact path="/" render={() => <Login logIn={this.logIn} />} /> */}
-
-            {/* <Route path="/MapPage" component={MapPage} />
-
-          <Route path="/Profile" component={Profile} />
-
-          <Route path="/ResultPage" component={ResultPage} />
-
-          <Route path="/SearchPage" component={SearchPage} />
-
-          <Route path="/Audit" component={Audit} /> */}
           </div>
         </Router>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AssociatePannel from './AssociatePannel'
+import AssociatePanel from './AssociatePanel'
 
 export default class AssociateList extends React.Component {
 
@@ -8,15 +8,16 @@ export default class AssociateList extends React.Component {
         return (
             <div>
 
-                {/* {this.props.data.map(Result => (
-                    <ResultPannel
+                 {this.props.associates.map(Result => (
+                    <AssociatePanel
                         key={Result._id}
-                        username={Result.username}
-                        content={Result.content}
+                        forenames={Result.forenames}
+                        surname={Result.surname}
+                        associateId={Result.associateId}
+                        phoneCalls={Result.numberOfPhoneCalls}
+                        latestCall={Result.latestPhoneCall}
                         />
-             ))} */}
-                <AssociatePannel />
-                <AssociatePannel />
+             ))} 
             </div>
         );
     };

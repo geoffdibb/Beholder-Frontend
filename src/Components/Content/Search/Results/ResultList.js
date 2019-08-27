@@ -8,17 +8,19 @@ export default class ResultList extends React.Component {
         return (
             <div>
 
-                {/* {this.props.data.map(Result => (
+                 {this.props.searchResults.map(Result => (
                     <ResultPanel
                         key={Result._id}
-                        username={Result.username}
-                        content={Result.content}
-                        />
-             ))} */}
-                <ResultPanel />
-                <ResultPanel />
-                <ResultPanel />
-                <ResultPanel />
+                        forenames={Result.forenames}
+                        surname={Result.surname}
+                        homeAddress={Result.homeAddress}
+                        result={Result}
+                        selectProfile={this.props.selectProfile}
+                    />
+                ))} 
+                {/* <ResultPanel selectProfile={this.props.selectProfile} result={{'_id':1234, 'forenames':'Aaron', 'surname':'Smith', 'homeAddress':'123 Street, London, W1 1AA' }}/>
+                <ResultPanel /> */}
+
             </div>
         );
     };

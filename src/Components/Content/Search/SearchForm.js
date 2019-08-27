@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormGroup,Button, Label, Input } from 'reactstrap';
+import { FormGroup, Label, Input } from 'reactstrap';
 import axios from "axios";
 
 
@@ -35,10 +35,10 @@ searchdb =(e) => {
         }
     }
 componentDidMount() {
-    this.props.onRef(this)
+    // this.props.onRef(this)
   }
   componentWillUnmount() {
-    this.props.onRef(undefined)
+    // this.props.onRef(undefined)
   }
 
 

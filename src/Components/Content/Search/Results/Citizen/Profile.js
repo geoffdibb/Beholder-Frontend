@@ -24,7 +24,7 @@ export default class Map extends React.Component {
                                     />
                                 </Row>
                                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <h3>Placeholder Name</h3>
+                                    <h3>{this.props.profileData.forenames} {this.props.profileData.surname}</h3>
                                 </Row>
                                 <Row>
                                     <Col md='12' className="p-2 bg-secondary my-1 rounded">
@@ -34,7 +34,7 @@ export default class Map extends React.Component {
                                                 <h5>Phone Number</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder Phone Number</p>
+                                                <p>{this.props.profileData.phoneNumber}</p>
                                             </Col>
                                         </Row>
                                         <Row>
@@ -43,9 +43,7 @@ export default class Map extends React.Component {
                                                 <h5>Address</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Address Line 1<br></br>
-                                                    City<br></br>
-                                                    Postcode</p>
+                                                <p>{this.props.profileData.homeAddress}</p>
                                             </Col>
                                         </Row>
                                     </Col>
@@ -64,7 +62,7 @@ export default class Map extends React.Component {
                                                 <h5>Age</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>SomeAge</p>
+                                                <p>{this.props.profileData.age}</p>
                                             </Col>
                                         </Row>
                                         <Row>
@@ -72,7 +70,7 @@ export default class Map extends React.Component {
                                                 <h5>D.O.B.</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>SomeDate</p>
+                                                <p>{this.props.profileData.dateOfBirth}</p>
                                             </Col>
                                         </Row>
                                         <Row>
@@ -80,7 +78,7 @@ export default class Map extends React.Component {
                                                 <h5>Place of Birth</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder City</p>
+                                                <p>{this.props.profileData.placeOfBirth}</p>
                                             </Col>
                                         </Row>
                                         <Row>
@@ -88,7 +86,7 @@ export default class Map extends React.Component {
                                                 <h5>Car Registration</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder Car Reg</p>
+                                                <p>{this.props.profileData.carReg}</p>
                                             </Col>
                                         </Row>
                                         <Row>
@@ -96,7 +94,7 @@ export default class Map extends React.Component {
                                                 <h5>Citizen ID</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder ID</p>
+                                                <p>{this.props.profileData.citizenId}</p>
                                             </Col>
                                         </Row>
                                     </Col>
@@ -106,7 +104,7 @@ export default class Map extends React.Component {
                     </Col>
                     <Col sm={{ size: '3', offset: 0 }}>
                         <h3>Associates</h3>
-                        <AssociateList />
+                        <AssociateList associates={this.props.associates} />
                     </Col>
                 </Row>
 
