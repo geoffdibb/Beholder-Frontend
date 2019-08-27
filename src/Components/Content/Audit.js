@@ -4,42 +4,89 @@ import axios from "axios";
 
 export default class Audit extends React.Component {
 
-searchauditdb =(e) => {
+    //auditrequests
+    searchauditrequestlog = (e) => {
         e.preventDefault();
-               const headers = {
+        const headers = {
             'Content-Type': 'application/json',
             'Authorization': this.props.apitoken
         }
-            axios
-                .get("http://localhost:5001/getauditrequestlog/" + this.props.username , { headers })
-                .then(response => {
-                   this.setState({
-                    responseData: (response.data)
+        axios
+            .get("http://localhost:5001/getauditrequestlog/" + this.props.username, { headers })
+            .then(response => {
+                this.setState({
+                    responseauditrequestlogData: (response.data)
                 });
-                    this.props.passedFunction();
-                })
-                .catch(err => { this.setState({ message: "Logs not found" }); });
+                this.props.passedFunction();
+            })
+            .catch(err => { this.setState({ message: "Logs not found" }); });
 
-        }
+    }
+
     
+    //searchlogs
+    searchauditsearchlogs = (e) => {
+        e.preventDefault();
+        const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': this.props.apitoken
+        }
+        axios
+            .get("http://localhost:5001/getsearchlog/" + this.props.username, { headers })
+            .then(response => {
+                this.setState({
+                    responsesearchlogData: (response.data)
+                });
+                this.props.passedFunction();
+            })
+            .catch(err => { this.setState({ message: "Logs not found" }); });
+
+    }
+
+
+//accesslogs
+    searchaudituseraccesslog = (e) => {
+        e.preventDefault();
+        const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': this.props.apitoken
+        }
+        axios
+            .get("http://localhost:5001/getaudituseraccesslog/" + this.props.username, { headers })
+            .then(response => {
+                this.setState({
+                    responseaudituseraccesslogData: (response.data)
+                });
+                this.props.passedFunction();
+            })
+            .catch(err => { this.setState({ message: "Logs not found" }); });
+    }
+
 
     render() {
         return (
             <div>
-                    <Col md='2'></Col>
-                        <div className="p-2 bg-info my-1 rounded">
-                            <Row>
- 
-                                <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <Col sm={{ size: '5', offset: 1 }}>
-                                    {this.responseData}
-                    
+                <Col md='2'></Col>
+                <div className="p-2 bg-info my-1 rounded">
+                    <Row>
 
-                                    </Col>
-                                </Row>
-                            </Row>
-                        </div>
-                        <button onClick= {this.searchauditdb}> Retrieve Logs </button>
+                        <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
+                            <Col sm={{ size: '5', offset: 1 }}>
+                                {this.responseauditrequestlogData}
+                                <button onClick={this.searchauditrequestlog}> Retrieve audit request Logs </button>
+
+                            </Col>
+                            <Col>
+                                {this.searchauditsearchlogs}
+                                <button onClick={this.searchauditsearchlogs}> Retrieve search Logs </button>
+                            </Col>
+                            <Col>
+                                {this.responseaudituseraccesslogData}
+                                <button onClick={this.searchaudituseraccesslog}> Retrieve user access Logs </button>
+                            </Col>
+                        </Row>
+                    </Row>
+                </div>
 
             </div>
         );
