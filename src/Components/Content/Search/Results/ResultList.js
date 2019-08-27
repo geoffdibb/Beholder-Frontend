@@ -8,9 +8,9 @@ export default class ResultList extends React.Component {
         return (
             <div>
 
-                 {this.props.searchResults.map(Result => (
+                 {this.props.searchResults.map(Result, index => (
                     <ResultPanel
-                        key={Result.id}
+                        key={index}
                         forenames={Result.forenames}
                         surname={Result.surname}
                         homeAddress={Result.homeAddress}
