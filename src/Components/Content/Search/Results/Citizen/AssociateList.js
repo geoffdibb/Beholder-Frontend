@@ -14,8 +14,8 @@ export default class AssociateList extends React.Component {
                         forenames={Result.forenames}
                         surname={Result.surname}
                         associateId={Result.associateId}
-                        phoneCalls={Result.phoneCalls}
-                        latestCall={Result.latestCall}
+                        phoneCalls={Result.numberOfPhoneCalls}
+                        latestCall={Result.latestPhoneCall}
                         />
              ))} 
             </div>
