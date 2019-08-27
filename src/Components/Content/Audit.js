@@ -152,7 +152,7 @@ export default class Audit extends React.Component {
             <div className="p-2 bg-info my-1 rounded">
                 <br></br>
                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-                    <Col sm={{ size: '3', offset: 1 }}>
+                    <Col sm={{ size: '3', offset: 0 }}>
                         <Button onClick={this.searchauditrequestlog}> Retrieve audit request Logs </Button>
                     </Col>
                     <Col sm={{ size: '3', offset: 1 }}>
