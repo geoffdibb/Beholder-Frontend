@@ -18,9 +18,7 @@ export default class ResultList extends React.Component {
                         selectProfile={this.props.selectProfile}
                     />
                 ))} 
-                {/* <ResultPanel selectProfile={this.props.selectProfile} result={{'_id':1234, 'forenames':'Aaron', 'surname':'Smith', 'homeAddress':'123 Street, London, W1 1AA' }}/>
-                <ResultPanel /> */}
-
+               
             </div>
         );
     };
