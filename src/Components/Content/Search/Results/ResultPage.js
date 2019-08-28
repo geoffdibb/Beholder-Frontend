@@ -26,9 +26,7 @@ export default class ResultPage extends React.Component {
                                 <Input type="select">
                                     <option>Forenames</option>
                                     <option>Surname</option>
-                                    <option>Location</option>
                                     <option>Car Reg</option>
-                                    <option>Time</option>
                                 </Input>
                             </FormGroup>
 
