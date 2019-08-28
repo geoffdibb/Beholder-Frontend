@@ -20,8 +20,7 @@ export default class Homepage extends React.Component {
             category: "",
             searchTerm: "",
             searchResults: [],
-            profileData: "",
-            associates: [],
+            profileData: ""
         };
 
     }
@@ -47,22 +46,22 @@ export default class Homepage extends React.Component {
     }
 
     selectProfile = (result) => {
-        const headers = {
-            'Content-Type': 'application/json',
-            'Authorization': this.props.apitoken
-        }
+        // const headers = {
+        //     'Content-Type': 'application/json',
+        //     'Authorization': this.props.apitoken
+        // }
         this.setState({
             profileData: result
         });
-        axios.get("http://localhost:5001/search/" + this.props.username + "/getassociates/" + result.citizenId, { headers })
-            .then(response => {
-                this.setState({
-                    associates: response.data
-                })
-            })
-            .catch(error => {
-                console.log(error);
-            })
+        // axios.get("http://localhost:5001/search/" + this.props.username + "/getassociates/" + result.citizenId, { headers })
+        //     .then(response => {
+        //         this.setState({
+        //             associates: response.data
+        //         })
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //     })
     }
 
     render() {
@@ -77,7 +76,7 @@ export default class Homepage extends React.Component {
                     <Col md='1'></Col>
                     <Col md='10'>
 
-                        <Route path="/Profile" render={() => <Profile search={this.search} profileData={this.state.profileData} associates={this.state.associates} />} />
+                        <Route path="/Profile" render={() => <Profile search={this.search} profileData={this.state.profileData} />} />
 
                         <Route path="/Results" render={() => <ResultPage search={this.search} searchResults={this.state.searchResults} selectProfile={this.selectProfile} />} />
 
