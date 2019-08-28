@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-    Row,
-    Col,
-    Button
-} from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 import { Link } from "react-router-dom";
 
 export default class ResultPanel extends React.Component {

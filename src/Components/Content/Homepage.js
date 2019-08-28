@@ -1,10 +1,7 @@
 import React from 'react';
 import NavigationBar from './NavigationBar';
 import { Route } from "react-router-dom";
-import {
-    Row,
-    Col
-} from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import axios from 'axios';
 
 import Profile from './Search/Results/Citizen/Profile';

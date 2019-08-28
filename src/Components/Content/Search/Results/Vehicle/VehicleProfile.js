@@ -21,9 +21,6 @@ export default class VehicleProfile extends React.Component {
                                         </Col>
                                     </div>
                                 </Row>
-                                {/* <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <h3></h3>
-                                </Row> */}
                                 <Row>
                                     <Col md='12' className="p-2 bg-secondary my-1 rounded">
                                         <h4>Owner Details</h4>

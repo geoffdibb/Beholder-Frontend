@@ -68,17 +68,6 @@ export default class ResultList extends React.Component {
         return (
             <div>
                 {list}
-                {/* {this.props.searchResults.map(Result => (
-                    <ResultPanel
-                        key={Result.index}
-                        forenames={Result.forenames}
-                        surname={Result.surname}
-                        homeAddress={Result.homeAddress}
-                        result={Result}
-                        selectProfile={this.props.selectProfile}
-                    />
-                ))} */}
-
             </div>
         );
     };

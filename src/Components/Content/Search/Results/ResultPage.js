@@ -65,7 +65,6 @@ export default class ResultPage extends React.Component {
                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Col md='8'>
                         {loading}
-                        {/* <ResultList searchResults={this.props.searchResults} search={this.props.search} selectProfile={this.props.selectProfile} category={this.props.category} /> */}
                     </Col>
 
                 </Row>
