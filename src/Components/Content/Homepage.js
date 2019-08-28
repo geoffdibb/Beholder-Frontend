@@ -9,7 +9,6 @@ import axios from 'axios';
 
 import Profile from './Search/Results/Citizen/Profile';
 import ResultPage from './Search/Results/ResultPage';
-import SearchPage from './Search/SearchPage';
 import Audit from './Audit';
 
 export default class Homepage extends React.Component {
