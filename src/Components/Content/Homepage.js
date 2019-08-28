@@ -65,9 +65,9 @@ export default class Homepage extends React.Component {
 
                         <Route path="/Profile" render={() => <Profile search={this.search} profileData={this.state.profileData} />} />
 
-                        <Route path="/Results" render={() => <ResultPage search={this.search} searchResults={this.state.searchResults} selectProfile={this.selectProfile} />} />
+                        <Route path="/Results" render={() => <ResultPage search={this.search} searchResults={this.state.searchResults} selectProfile={this.selectProfile} category={this.state.category} />} />
 
-                        <Route exact path="/" render={() => <ResultPage search={this.search} searchResults={this.state.searchResults} selectProfile={this.selectProfile} />} />
+                        <Route exact path="/" render={() => <ResultPage search={this.search} searchResults={this.state.searchResults} selectProfile={this.selectProfile} category={this.state.category} />} />
 
                         <Route path="/Audit" render={() => <Audit username={this.props.username} apitoken={this.props.apitoken} />} />
 
