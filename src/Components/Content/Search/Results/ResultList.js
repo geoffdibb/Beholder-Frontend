@@ -39,12 +39,30 @@ export default class ResultList extends React.Component {
         var list = <div />
         if (this.props.category === "Car Reg") {
             list = <div>
-                {this.props.searchResults.map(this.renderCarList)}
+                {this.props.searchResults.map((response, index) => (
+                <ResultPanelCar
+                key={index}
+                forenames={response.forenames}
+                surname={response.surname}
+                carReg={response.carReg}
+                result={response}
+                selectProfile={this.selectProfile}
+            />
+                ))}
             </div>
         }
         if (this.props.category === "Forenames" || this.props.category === "Surname") {
             list = <div>
-                {this.props.searchResults.map(this.renderCitizenList)}
+                {this.props.searchResults.map(Result => (
+                    <ResultPanel
+                        key={Result.index}
+                        forenames={Result.forenames}
+                        surname={Result.surname}
+                        homeAddress={Result.homeAddress}
+                        result={Result}
+                        selectProfile={this.props.selectProfile}
+                    />
+                ))}
             </div>
         }
         return (
