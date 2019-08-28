@@ -97,6 +97,7 @@ export default class Audit extends React.Component {
             <tr key={index}>
                 <td>{index}</td>
                 <td>{response.username}</td>
+                <td>{response.category}</td>
                 <td>{response.searchTerm}</td>
                 <td>{response.timeStamp}</td>
             </tr>
@@ -125,6 +126,7 @@ export default class Audit extends React.Component {
                     <tr>
                         <th></th>
                         <th>Username</th>
+                        <th>Category</th>
                         <th>Search Term</th>
                         <th>Time Stamp</th>
                     </tr>

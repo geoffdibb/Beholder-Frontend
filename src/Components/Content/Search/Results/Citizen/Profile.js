@@ -59,6 +59,14 @@ export default class Profile extends React.Component {
                                         <h4>Details</h4>
                                         <Row>
                                             <Col sm={{ size: '5', offset: 0 }}>
+                                                <h5>Sex</h5>
+                                            </Col>
+                                            <Col sm={{ size: '7', offset: 0 }}>
+                                                <p>{this.props.profileData.sex}</p>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col sm={{ size: '5', offset: 0 }}>
                                                 <h5>Age</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
@@ -104,7 +112,7 @@ export default class Profile extends React.Component {
                     </Col>
                     <Col sm={{ size: '3', offset: 0 }}>
                         <h3>Associates</h3>
-                        <AssociateList associates={this.props.associates} />
+                        <AssociateList associates={this.props.profileData.associateList} />
                     </Col>
                 </Row>
 

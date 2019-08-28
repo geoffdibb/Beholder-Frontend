@@ -1,17 +1,61 @@
 import React from 'react';
 
-import ResultPanel from './ResultPanel'
+import ResultPanelCitizen from './ResultPanelCitizen'
+import ResultPanelCar from './ResultPanelCar'
 
 export default class ResultList extends React.Component {
 
-    render() {
+    selectProfile = (result) => {
+        this.props.selectProfile(result);
+    }
 
+
+    renderCarList(response, index) {
         return (
-            <div>
+            <ResultPanelCar
+                key={index}
+                forenames={response.forenames}
+                surname={response.surname}
+                carReg={response.carReg}
+                result={response}
+                selectProfile={this.selectProfile}
+            />
+        )
+    }
+    renderCitizenList(response, index) {
+        return (
+            <ResultPanelCitizen
+                key={index}
+                forenames={response.forenames}
+                surname={response.surname}
+                homeAddress={response.homeAddress}
+                result={response}
+                selectProfile={this.selectProfile}
+            />
+        )
+    }
 
-                {this.props.searchResults.map(Result => (
-                    <ResultPanel
-                        key={Result.index}
+    render() {
+        var list = <div />
+        if (this.props.category === "Car Reg") {
+            list = <div>
+                {this.props.searchResults.map((response, index) => (
+                <ResultPanelCar
+                key={index}
+                forenames={response.forenames}
+                surname={response.surname}
+                carReg={response.carReg}
+                result={response}
+                selectProfile={this.selectProfile}
+            />
+                ))}
+            </div>
+        }
+        if (this.props.category === "Forenames" || this.props.category === "Surname") {
+            list = <div>
+                {this.props.searchResults.map((Result, index) => (
+                    <ResultPanelCitizen
+                        key={index}
                         forenames={Result.forenames}
                         surname={Result.surname}
                         homeAddress={Result.homeAddress}
@@ -19,7 +63,11 @@ export default class ResultList extends React.Component {
                         selectProfile={this.props.selectProfile}
                     />
                 ))}
-
+            </div>
+        }
+        return (
+            <div>
+                {list}
             </div>
         );
     };
