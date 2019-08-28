@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot results 1`] = `
+<div>
+  <h2>
+    Search
+  </h2>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div
+      className="row"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <div
+          className="form-group"
+        >
+          <label
+            className="sr-only"
+            htmlFor="Category"
+          >
+            Category
+          </label>
+          <select
+            className="form-control"
+          >
+            <option>
+              Forenames
+            </option>
+            <option>
+              Surname
+            </option>
+            <option>
+              Car Reg
+            </option>
+          </select>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            className="sr-only"
+            htmlFor="Search"
+          >
+            Search
+          </label>
+          <input
+            className="form-control"
+            id="Search"
+            name="search"
+            placeholder="Search"
+            type="search"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-4"
+      />
+      <div
+        className="col-md-4"
+      >
+        <input
+          className="btn btn-dark"
+          type="submit"
+          value="Search"
+        />
+      </div>
+      <div
+        className="col-md-4"
+      />
+    </div>
+  </form>
+  <br />
+  <div
+    className="row"
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <div
+      className="col-md-8"
+    >
+      <div>
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;

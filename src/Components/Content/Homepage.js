@@ -42,6 +42,10 @@ export default class Homepage extends React.Component {
             })
             .catch(error => {
                 console.log(error);
+                this.setState({
+                    searchResults: [],
+                    loading: false
+                })
             })
     }
 

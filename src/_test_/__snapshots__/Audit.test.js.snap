@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`render a prop 1`] = `ShallowWrapper {}`;
+
 exports[`snapshot Audit 1`] = `
 <div
   className="p-2 bg-info my-1 rounded"
