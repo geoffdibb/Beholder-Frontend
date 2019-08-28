@@ -5,6 +5,11 @@ import ResultPanelCar from './ResultPanelCar'
 
 export default class ResultList extends React.Component {
 
+    selectProfile = (result) => {
+        this.props.selectProfile(result);
+    }
+
+
     renderCarList(response, index) {
         return (
             <ResultPanelCar
@@ -13,7 +18,7 @@ export default class ResultList extends React.Component {
                 surname={response.surname}
                 carReg={response.carReg}
                 result={response}
-                selectProfile={this.props.selectProfile}
+                selectProfile={this.selectProfile}
             />
         )
     }
@@ -25,7 +30,7 @@ export default class ResultList extends React.Component {
                 surname={response.surname}
                 homeAddress={response.homeAddress}
                 result={response}
-                selectProfile={this.props.selectProfile}
+                selectProfile={this.selectProfile}
             />
         )
     }
