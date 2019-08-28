@@ -17,7 +17,7 @@ export default class VehicleProfile extends React.Component {
                                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <div style={{ 'background-image': 'url("../../../CarPlate.png")', width: 486, height: 103 }}>
                                         <Col sm={{ size: '11', offset: 1 }}>
-                                            <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 60, marginTop: 20 }}>{this.props.profileData.carReg}</h1>
+                                            <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 50, marginTop: 18 }}> {this.props.profileData.carReg}</h1>
                                         </Col>
                                     </div>
                                 </Row>
