@@ -24,7 +24,8 @@ export default class ResultPage extends React.Component {
                             <FormGroup>
                                 <Label for="Category" hidden>Category</Label>
                                 <Input type="select">
-                                    <option>Name</option>
+                                    <option>Forenames</option>
+                                    <option>Surname</option>
                                     <option>Location</option>
                                     <option>Car Reg</option>
                                     <option>Time</option>
