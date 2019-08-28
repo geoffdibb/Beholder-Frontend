@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, Form, Col, Row, FormGroup, Label, Input } from 'reactstrap';
+import { Form, Col, Row, FormGroup, Label, Input } from 'reactstrap';
 
-import SearchForm from '../SearchForm';
 import ResultList from './ResultList';
 
 export default class ResultPage extends React.Component {
@@ -21,7 +20,6 @@ export default class ResultPage extends React.Component {
                 <h2>Results</h2>
                 <Form onSubmit={this.searchdb}>
                     <Row style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        {/* <SearchForm onRef={ref => (this.SearchForm = ref)}/> */}
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <FormGroup>
                                 <Label for="Category" hidden>Category</Label>
