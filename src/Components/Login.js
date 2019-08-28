@@ -63,12 +63,8 @@ export default class Login extends React.Component {
                     <br />
                     <Row>
                         <Col sm={{ size: '4', offset: 4 }} style={{ justifyContent: 'center', alignItems: 'center' }}>
-                            {/* <InputGroup check>
-                                 <Label check>  */}
                             <Input type="checkbox" checked={this.state.checked} onChange={this.handleCheckboxChange} />
                             Check here if you are not a bot?
-                                 {/* </Label> 
-                            </InputGroup> */}
                         </Col>
                     </Row>
                     <br />

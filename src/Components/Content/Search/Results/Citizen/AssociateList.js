@@ -8,10 +8,10 @@ export default class AssociateList extends React.Component {
         return (
             <div>
 
-                 {this.props.associates.map(Result => (
+                 {this.props.associates.map((Result, index) => (
                     <AssociatePanel
-                        key={Result._id}
-                        forenames={Result.forenames}
+                        key={index}
+                        name={Result.name}
                         surname={Result.surname}
                         associateId={Result.associateId}
                         phoneCalls={Result.numberOfPhoneCalls}

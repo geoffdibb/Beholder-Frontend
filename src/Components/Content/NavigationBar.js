@@ -9,6 +9,7 @@ import {
     NavLink,
     Col
 } from 'reactstrap';
+import { NavLink as RRNavLink } from 'react-router-dom';
 import BackButton from './BackButton';
 
 
@@ -33,19 +34,22 @@ export default class NavigationBar extends React.Component {
                     <Col md='4'>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="/" >Home</NavLink>
+                                <NavLink tag={RRNavLink} to="/" >Home</NavLink>
                             </NavItem>
                             <NavItem>
                                 <BackButton />
                             </NavItem>
                                     
                             <NavItem>
-                                <NavLink href="/Results">Search Results</NavLink>
+                                <NavLink tag={RRNavLink} to="/Results">Search Results</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink tag={RRNavLink} to="/Audit">Audit</NavLink>
                             </NavItem>
                         </Nav>
                     </Col>
                     <Col md='4'>
-                        <NavbarBrand className="mx-auto" href="/"  >
+                        <NavbarBrand className="mx-auto" tag={RRNavLink} to="/"  >
                             <img
                                 src="../logo.png"
                                 width="160"

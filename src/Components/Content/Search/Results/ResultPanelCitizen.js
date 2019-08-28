@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-    Row,
-    Col,
-    Button
-} from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 import { Link } from "react-router-dom";
 
 export default class ResultPanel extends React.Component {
@@ -30,15 +26,15 @@ export default class ResultPanel extends React.Component {
                                     </Col>
                                 </div>
                                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                    <Col sm={{ size: '5', offset: 1 }}>
+                                    <Col sm={{ size: '6', offset: 0 }}>
                                         <h4>Name</h4>
                                         <p>{this.props.forenames} {this.props.surname}</p>
                                     </Col>
-                                    <Col sm={{ size: '5', offset: 1 }}>
+                                    <Col sm={{ size: '6', offset: 0 }}>
                                         <h4>Address</h4>
                                         <p>{this.props.homeAddress}</p>
                                     </Col>
-                                    <Col sm={{ size: 'auto', offset: 0 }} >
+                                    <Col sm={{ size: '12', offset: 0 }} >
                                         <Link to={`/Profile`}>
                                             <Button onClick={this.ProfilePage}>Profile</Button>
                                         </Link>

@@ -46,7 +46,7 @@ export default class AssociatePannel extends React.Component {
                                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <Col sm={{ size: 'auto', offset: 1 }}>
                                         <h4>Name</h4>
-                                        <p>{this.props.forenames} {this.props.surname}</p>
+                                        <p>{this.props.name} {this.props.surname}</p>
                                     </Col>
 
                                     <Col sm={{ size: 'auto', offset: 0 }} >

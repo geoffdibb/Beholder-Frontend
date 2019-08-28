@@ -8,17 +8,6 @@ import Login from './Components/Login';
 
 export default class App extends React.Component {
 
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     username: "user5",
-  //     apitoken: "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkNWQ2OTI2MzYxNDNjMWViODU5ZThmYSIsImlhdCI6MTU2NjU3NDkzMCwiZXhwIjoxNTY2NTc4NTMwfQ.5_DjPiHBejXNCpScVWmLppORW_RlhNUNdxGTSUheZEg",
-  //     invalid: false,
-  //     feedback: "Please enter valid details"
-  //   };
-
-  // }
-
   constructor() {
     super()
     this.state = {
