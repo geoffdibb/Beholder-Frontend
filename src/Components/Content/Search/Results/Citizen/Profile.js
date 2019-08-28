@@ -58,7 +58,6 @@ export default class Profile extends React.Component {
                                     <Col sm={{ size: '12', offset: 0 }} className="p-2 bg-secondary my-1 rounded">
                                         <h4>Details</h4>
                                         <Row>
-                                        <Row>
                                             <Col sm={{ size: '5', offset: 0 }}>
                                                 <h5>Sex</h5>
                                             </Col>
@@ -66,6 +65,7 @@ export default class Profile extends React.Component {
                                                 <p>{this.props.profileData.sex}</p>
                                             </Col>
                                         </Row>
+                                        <Row>
                                             <Col sm={{ size: '5', offset: 0 }}>
                                                 <h5>Age</h5>
                                             </Col>
