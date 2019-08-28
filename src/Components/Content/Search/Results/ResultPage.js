@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Col, Row, FormGroup, Label, Input } from 'reactstrap';
+import { Form, Col, Row, FormGroup, Label, Input, Spinner } from 'reactstrap';
 
 import ResultList from './ResultList';
 
@@ -25,6 +25,10 @@ export default class ResultPage extends React.Component {
         }
     }
     render() {
+        var loading = <Spinner style={{ width: '3rem', height: '3rem' }} />
+        if (!this.props.loading) {
+            loading = <ResultList searchResults={this.props.searchResults} search={this.props.search} selectProfile={this.props.selectProfile} category={this.props.category} />
+        }
         return (
             <div>
                 <h2>Search</h2>
@@ -60,7 +64,8 @@ export default class ResultPage extends React.Component {
                 <br></br>
                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Col md='8'>
-                        <ResultList searchResults={this.props.searchResults} search={this.props.search} selectProfile={this.props.selectProfile} category={this.props.category} />
+                        {loading}
+                        {/* <ResultList searchResults={this.props.searchResults} search={this.props.search} selectProfile={this.props.selectProfile} category={this.props.category} /> */}
                     </Col>
 
                 </Row>

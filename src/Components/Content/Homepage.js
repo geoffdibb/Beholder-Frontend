@@ -20,7 +20,8 @@ export default class Homepage extends React.Component {
             category: "",
             searchTerm: "",
             searchResults: [],
-            profileData: ""
+            profileData: "",
+            loading: false
         };
 
     }
@@ -32,12 +33,14 @@ export default class Homepage extends React.Component {
         }
         this.setState({
             category: category,
-            searchTerm: searchTerm
+            searchTerm: searchTerm,
+            loading: true
         })
         axios.get("http://localhost:5001/search/" + this.props.username + "/" + category + "/" + searchTerm, { headers })
             .then(response => {
                 this.setState({
-                    searchResults: response.data
+                    searchResults: response.data,
+                    loading: false
                 })
             })
             .catch(error => {
@@ -65,9 +68,9 @@ export default class Homepage extends React.Component {
 
                         <Route path="/Profile" render={() => <Profile search={this.search} profileData={this.state.profileData} />} />
 
-                        <Route path="/Results" render={() => <ResultPage search={this.search} searchResults={this.state.searchResults} selectProfile={this.selectProfile} category={this.state.category} />} />
+                        <Route path="/Results" render={() => <ResultPage search={this.search} searchResults={this.state.searchResults} selectProfile={this.selectProfile} category={this.state.category} loading={this.state.loading} />} />
 
-                        <Route exact path="/" render={() => <ResultPage search={this.search} searchResults={this.state.searchResults} selectProfile={this.selectProfile} category={this.state.category} />} />
+                        <Route exact path="/" render={() => <ResultPage search={this.search} searchResults={this.state.searchResults} selectProfile={this.selectProfile} category={this.state.category} loading={this.state.loading} />} />
 
                         <Route path="/Audit" render={() => <Audit username={this.props.username} apitoken={this.props.apitoken} />} />
 
