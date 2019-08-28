@@ -5,12 +5,22 @@ import ResultList from './ResultList';
 
 export default class ResultPage extends React.Component {
 
+    constructor() {
+        super()
+        this.state = {
+            category: "",
+        };
+    }
+
     searchdb = (e) => {
         e.preventDefault();
         let category = e.target[0].value;
         if (e.target[1].value === "") {
             this.setState({ message: "Please fill all fields" });
         } else {
+            this.setState({
+                category: category
+            })
             this.props.search(category, e.target[1].value);
         }
     }
@@ -50,7 +60,7 @@ export default class ResultPage extends React.Component {
                 <br></br>
                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Col md='8'>
-                        <ResultList searchResults={this.props.searchResults} search={this.props.search} selectProfile={this.props.selectProfile} />
+                        <ResultList searchResults={this.props.searchResults} search={this.props.search} selectProfile={this.props.selectProfile} category={this.state.category} />
                     </Col>
 
                 </Row>
