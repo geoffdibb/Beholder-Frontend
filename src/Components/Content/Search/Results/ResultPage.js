@@ -25,7 +25,7 @@ export default class ResultPage extends React.Component {
         }
     }
     render() {
-        var loading = <Spinner style={{ width: '3rem', height: '3rem' }} />
+        var loading = <Spinner color="dark" style={{ width: '3rem', height: '3rem' }} />
         if (!this.props.loading) {
             loading = <ResultList searchResults={this.props.searchResults} search={this.props.search} selectProfile={this.props.selectProfile} category={this.props.category} />
         }
