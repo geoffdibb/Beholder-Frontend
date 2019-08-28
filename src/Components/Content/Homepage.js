@@ -55,7 +55,7 @@ export default class Homepage extends React.Component {
             category: category,
             searchTerm: searchTerm
         })
-        axios.get("http://localhost:5001/search/" + this.props.username + "/" + category + "/" + searchTerm, { headers })
+        axios.get("/user/search/" + this.props.username + "/" + category + "/" + searchTerm, { headers })
             .then(response => {
                 console.log(response.data);
                 console.log(response.data.message);
@@ -77,7 +77,7 @@ export default class Homepage extends React.Component {
         this.setState({
             profileData: result
         });
-        axios.get("http://localhost:5001/search/" + this.props.username + "/getassociates/" + result.citizenId, { headers })
+        axios.get("/user/search/" + this.props.username + "/getassociates/" + result.citizenId, { headers })
             .then(response => {
                 console.log(response.data);
                 this.setState({
