@@ -28,7 +28,7 @@ export default class App extends React.Component {
       username: username,
       password: password,
     }
-    axios.post("http://localhost:5001/loginUser", body)
+    axios.post("/user/loginUser", body)
       .then(response => {
         this.setState({
           apitoken: "jwt "+response.data.token

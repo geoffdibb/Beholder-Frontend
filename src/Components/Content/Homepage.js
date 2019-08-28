@@ -33,7 +33,7 @@ export default class Homepage extends React.Component {
             searchTerm: searchTerm,
             loading: true
         })
-        axios.get("http://localhost:5001/search/" + this.props.username + "/" + category + "/" + searchTerm, { headers })
+        axios.get("/user/search/" + this.props.username + "/" + category + "/" + searchTerm, { headers })
             .then(response => {
                 this.setState({
                     searchResults: response.data,
@@ -53,6 +53,17 @@ export default class Homepage extends React.Component {
         this.setState({
             profileData: result
         });
+      
+        axios.get("/user/search/" + this.props.username + "/getassociates/" + result.citizenId, { headers })
+            .then(response => {
+                console.log(response.data);
+                this.setState({
+                    associates: response.data //need to complete with actual path
+                })
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     render() {
