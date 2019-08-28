@@ -17,13 +17,13 @@ export default class VehicleProfile extends React.Component {
                                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <div style={{ 'background-image': 'url("../../../CarPlate.png")', width: 486, height: 103 }}>
                                         <Col sm={{ size: '11', offset: 1 }}>
-                                            <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 60, marginTop: 20 }}>AA00 AAA</h1>
+                                            <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 60, marginTop: 20 }}>{this.props.profileData.carReg}</h1>
                                         </Col>
                                     </div>
                                 </Row>
-                                <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
+                                {/* <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <h3></h3>
-                                </Row>
+                                </Row> */}
                                 <Row>
                                     <Col md='12' className="p-2 bg-secondary my-1 rounded">
                                         <h4>Owner Details</h4>
@@ -32,7 +32,7 @@ export default class VehicleProfile extends React.Component {
                                                 <h5>Name</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder Name</p>
+                                                <p>{this.props.profileData.forenames} {this.props.profileData.surname}</p>
                                             </Col>
                                         </Row>
                                         <Row>
@@ -40,7 +40,7 @@ export default class VehicleProfile extends React.Component {
                                                 <h5>Citizen ID</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder ID</p>
+                                                <p>{this.props.profileData.citizenID}</p>
                                             </Col>
                                         </Row>
                                     </Col>
@@ -59,7 +59,7 @@ export default class VehicleProfile extends React.Component {
                                                 <h5>Make</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder Make</p>
+                                                <p>{this.props.profileData.make}</p>
                                             </Col>
                                         </Row>
                                         <Row>
@@ -67,7 +67,7 @@ export default class VehicleProfile extends React.Component {
                                                 <h5>Model</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder Model</p>
+                                                <p>{this.props.profileData.model}</p>
                                             </Col>
                                         </Row>
                                         <Row>
@@ -75,7 +75,7 @@ export default class VehicleProfile extends React.Component {
                                                 <h5>Colour</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder Colour</p>
+                                                <p>{this.props.profileData.colour}</p>
                                             </Col>
                                         </Row>
                                         <Row>
@@ -83,7 +83,7 @@ export default class VehicleProfile extends React.Component {
                                                 <h5>Years Owned</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder Year</p>
+                                                <p>{this.props.profileData.yearsOwned}</p>
                                             </Col>
                                         </Row>
                                         <Row>
@@ -91,7 +91,7 @@ export default class VehicleProfile extends React.Component {
                                                 <h5>Number of Owners</h5>
                                             </Col>
                                             <Col sm={{ size: '7', offset: 0 }}>
-                                                <p>Placeholder Number</p>
+                                                <p>{this.props.profileData.owners}</p>
                                             </Col>
                                         </Row>
                                     </Col>
