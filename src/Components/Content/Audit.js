@@ -23,7 +23,7 @@ export default class Audit extends React.Component {
             'Authorization': this.props.apitoken
         }
         axios
-            .get("http://localhost:5001/getauditrequestlog/" + this.props.username, { headers })
+            .get("/getauditrequestlog/" + this.props.username, { headers })
             .then(response => {
                 this.setState({
                     responseauditrequestlogData: (response.data),
@@ -46,7 +46,7 @@ export default class Audit extends React.Component {
             'Authorization': this.props.apitoken
         }
         axios
-            .get("http://localhost:5001/getsearchlog/" + this.props.username, { headers })
+            .get("/getsearchlog/" + this.props.username, { headers })
             .then(response => {
                 this.setState({
                     responsesearchlogData: (response.data),
@@ -69,7 +69,7 @@ export default class Audit extends React.Component {
             'Authorization': this.props.apitoken
         }
         axios
-            .get("http://localhost:5001/getaudituseraccesslog/" + this.props.username, { headers })
+            .get("/user/getaudituseraccesslog/" + this.props.username, { headers })
             .then(response => {
                 this.setState({
                     responseaudituseraccesslogData: (response.data),
