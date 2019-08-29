@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot App 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <div>
+      <img
+        alt="Beholder Logo"
+        className="Logo"
+        src="logo.png"
+      />
+      <form
+        className=""
+        onSubmit={[Function]}
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-4 offset-sm-4"
+          >
+            <h1>
+              Welcome
+            </h1>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-6 offset-sm-3"
+          >
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              >
+                <span
+                  className="input-group-text"
+                  style={
+                    Object {
+                      "width": "100px",
+                    }
+                  }
+                >
+                  Username
+                </span>
+              </div>
+              <input
+                className="form-control"
+                id="username"
+                name="username"
+                placeholder="username"
+                type="username"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-6 offset-sm-3"
+          >
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              />
+              <span
+                className="input-group-text"
+                name="password"
+                style={
+                  Object {
+                    "width": "100px",
+                  }
+                }
+                type="password"
+              >
+                Password
+              </span>
+              <input
+                className="form-control"
+                id="Password"
+                name="password"
+                placeholder="password"
+                type="password"
+              />
+              <div
+                className="invalid-feedback"
+              >
+                Please enter valid details
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-4 offset-sm-4"
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              }
+            }
+          >
+            <input
+              checked={false}
+              className="form-check-input"
+              onChange={[Function]}
+              type="checkbox"
+            />
+            Check here if you are not a bot?
+          </div>
+        </div>
+        <br />
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-4 offset-sm-4"
+          >
+            <button
+              aria-label={null}
+              className="btn btn-dark disabled"
+              disabled={true}
+              onClick={[Function]}
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;
