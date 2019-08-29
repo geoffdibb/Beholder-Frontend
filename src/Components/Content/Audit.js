@@ -16,7 +16,7 @@ export default class Audit extends React.Component {
     }
 
     //auditrequests
-    searchauditrequestlog = (e) => {
+    searchAuditRequestLog = (e) => {
         e.preventDefault();
         const headers = {
             'Content-Type': 'application/json',
