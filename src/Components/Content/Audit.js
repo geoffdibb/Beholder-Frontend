@@ -8,25 +8,25 @@ export default class Audit extends React.Component {
         super()
         this.state = {
             button: "",
-            responseauditrequestlogData: [],
-            responsesearchlogData: [],
-            responseaudituseraccesslogData: []
+            responseAuditRequestLogData: [],
+            responseSearchLogData: [],
+            responseAuditUserAccessLogData: []
         };
 
     }
 
     //auditrequests
-    searchauditrequestlog = (e) => {
+    searchAuditRequestLog = (e) => {
         e.preventDefault();
         const headers = {
             'Content-Type': 'application/json',
             'Authorization': this.props.apitoken
         }
         axios
-            .get("http://localhost:5001/getauditrequestlog/" + this.props.username, { headers })
+            .get("/user/getauditrequestlog/" + this.props.username, { headers })
             .then(response => {
                 this.setState({
-                    responseauditrequestlogData: (response.data),
+                    responseAuditRequestLogData: (response.data),
                     button: "1"
                 });
             })
@@ -39,17 +39,17 @@ export default class Audit extends React.Component {
 
 
     //searchlogs
-    searchauditsearchlogs = (e) => {
+    searchAuditSearchLogs = (e) => {
         e.preventDefault();
         const headers = {
             'Content-Type': 'application/json',
             'Authorization': this.props.apitoken
         }
         axios
-            .get("http://localhost:5001/getsearchlog/" + this.props.username, { headers })
+            .get("/user/getsearchlog/" + this.props.username, { headers })
             .then(response => {
                 this.setState({
-                    responsesearchlogData: (response.data),
+                    responseSearchLogData: (response.data),
                     button: "2"
                 });
             })
@@ -62,17 +62,17 @@ export default class Audit extends React.Component {
 
 
     //accesslogs
-    searchaudituseraccesslog = (e) => {
+    searchAuditUserAccessLog = (e) => {
         e.preventDefault();
         const headers = {
             'Content-Type': 'application/json',
             'Authorization': this.props.apitoken
         }
         axios
-            .get("http://localhost:5001/getaudituseraccesslog/" + this.props.username, { headers })
+            .get("/user/getaudituseraccesslog/" + this.props.username, { headers })
             .then(response => {
                 this.setState({
-                    responseaudituseraccesslogData: (response.data),
+                    responseAuditUserAccessLogData: (response.data),
                     button: "3"
                 });
             })
@@ -116,7 +116,7 @@ export default class Audit extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.state.responseauditrequestlogData.map(this.renderLog1)}
+                    {this.state.responseAuditRequestLogData.map(this.renderLog1)}
                 </tbody>
             </Table>
         }
@@ -132,7 +132,7 @@ export default class Audit extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.state.responsesearchlogData.map(this.renderLog2)}
+                    {this.state.responseSearchLogData.map(this.renderLog2)}
                 </tbody>
             </Table>
         }
@@ -146,7 +146,7 @@ export default class Audit extends React.Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {this.state.responseaudituseraccesslogData.map(this.renderLog1)}
+                    {this.state.responseAuditUserAccessLogData.map(this.renderLog1)}
                 </tbody>
             </Table>
         }
@@ -155,13 +155,13 @@ export default class Audit extends React.Component {
                 <br></br>
                 <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
                     <Col sm={{ size: '3', offset: 0 }}>
-                        <Button onClick={this.searchauditrequestlog}> Retrieve audit request Logs </Button>
+                        <Button onClick={this.searchAuditRequestLog}> Retrieve audit request Logs </Button>
                     </Col>
                     <Col sm={{ size: '3', offset: 1 }}>
-                        <Button onClick={this.searchauditsearchlogs}> Retrieve search Logs </Button>
+                        <Button onClick={this.searchAuditSearchLogs}> Retrieve search Logs </Button>
                     </Col>
                     <Col sm={{ size: '3', offset: 1 }}>
-                        <Button onClick={this.searchaudituseraccesslog}> Retrieve user access Logs </Button>
+                        <Button onClick={this.searchAuditUserAccessLog}> Retrieve user access Logs </Button>
                     </Col>
                 </Row>
                 <Row>
